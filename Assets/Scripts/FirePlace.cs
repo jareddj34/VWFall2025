@@ -14,6 +14,8 @@ public class FirePlace : MonoBehaviour
 
     public GameObject lighterCanvas;
 
+    public AudioSource fireSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,6 +43,7 @@ public class FirePlace : MonoBehaviour
 
         if(other.gameObject.name == "Lighter" && i >= 3) {
             fire.SetActive(true);
+            fireSound.Play();
             StartCoroutine(LoadNextScene());
         }
     }
