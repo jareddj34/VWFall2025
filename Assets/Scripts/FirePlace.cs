@@ -16,6 +16,8 @@ public class FirePlace : MonoBehaviour
 
     public AudioSource fireSound;
 
+    public GameObject tentCanvas;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,7 +46,7 @@ public class FirePlace : MonoBehaviour
         if(other.gameObject.name == "Lighter" && i >= 3) {
             fire.SetActive(true);
             fireSound.Play();
-            StartCoroutine(LoadNextScene());
+            tentCanvas.SetActive(true);
         }
     }
 

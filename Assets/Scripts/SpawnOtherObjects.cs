@@ -9,6 +9,8 @@ public class SpawnOtherObjects : MonoBehaviour
     public Instructions instructions;
     public GameObject treeCanvas;
 
+    public GameObject[] objectsToHide;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,6 +36,15 @@ public class SpawnOtherObjects : MonoBehaviour
                 }
             }
             instructions.ChangeText("Place the wood on the fire pit.");
+
+            if(objectsToHide.Length > 0)
+            {
+                foreach(GameObject obj in objectsToHide)
+                {
+                    obj.SetActive(false);
+                }
+            }
+
             if(destroySelf) parentObj.SetActive(false);
         }
     }
